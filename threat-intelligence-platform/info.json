@@ -21,7 +21,7 @@
                 "required": true,
                 "visible": true,
                 "editable": true,
-                "value": "api.threatintelligenceplatform.com",
+                "value": "",
                 "placeholder": "e.g: https://api.threatintelligenceplatform.com or api.threatintelligenceplatform.com"
             },
             {
@@ -62,7 +62,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "threatintelligenceplatform.com",
+                    "value": "",
                     "placeholder": "e.g:threatintelligenceplatform.com",
                     "description": "Required domain name whose geolocation data needs to be retrieved.",
                     "tooltip": "Required domain name whose geolocation data needs to be retrieved."
@@ -101,7 +101,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "threatintelligenceplatform.com",
+                    "value": "",
                     "placeholder": "e.g:threatintelligenceplatform.com",
                     "description": "Required domain name whose geolocation data needs to be retrieved.",
                     "tooltip": "Required domain name whose geolocation data needs to be retrieved."
@@ -128,7 +128,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "threatintelligenceplatform.com",
+                    "value": "",
                     "placeholder": "e.g:threatintelligenceplatform.com",
                     "description": "Required domain name whose geolocation data needs to be retrieved.",
                     "tooltip": "Required domain name whose geolocation data needs to be retrieved."
@@ -155,7 +155,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "threatintelligenceplatform.com",
+                    "value": "",
                     "placeholder": "e.g:threatintelligenceplatform.com",
                     "description": "Required domain name whose geolocation data needs to be retrieved.",
                     "tooltip": "Required domain name whose geolocation data needs to be retrieved."
@@ -182,7 +182,7 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "threatintelligenceplatform.com",
+                    "value": "",
                     "placeholder": "e.g:threatintelligenceplatform.com",
                     "description": "Required domain name whose geolocation data needs to be retrieved.",
                     "tooltip": "Required domain name whose geolocation data needs to be retrieved."
@@ -210,22 +210,24 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "threatintelligenceplatform.com",
+                    "value": "",
                     "placeholder": "e.g:threatintelligenceplatform.com",
                     "description": "Required domain name whose geolocation data needs to be retrieved.",
                     "tooltip": "Required domain name whose geolocation data needs to be retrieved."
                 },
                 {
                     "title": "Mode",
-                    "type": "text",
+                    "type": "select",
                     "name": "mode",
-                    "required": false,
+                    "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": "fast",
-                    "placeholder": "e.g:by default fast",
-                    "description": "Optional field, choose between two modes:'fast' (default) or 'full'. Only select test codes will run—i.e., 62 WHOIS Domain Status, 82 Malware Databases Check, 87 SSL certificate validity, and 93 WHOIS Domain Check—while other tests and data collectors will be disabled and in full mode all tests will be performed, similar to what the TIP GUI displays.",
-                    "tooltip": "Optional field, choose between two modes:'fast' (default) or 'full'. Only select test codes will run—i.e., 62 WHOIS Domain Status, 82 Malware Databases Check, 87 SSL certificate validity, and 93 WHOIS Domain Check—while other tests and data collectors will be disabled and in full mode all tests will be performed, similar to what the TIP GUI displays."
+                    "description": "Select the type of query that is how you want to perform  'fast' or 'full'. Only select test codes will run—i.e., 62 WHOIS Domain Status, 82 Malware Databases Check, 87 SSL certificate validity, and 93 WHOIS Domain Check—while other tests and data collectors will be disabled and in full mode all tests will be performed, similar to what the TIP GUI displays.",
+                    "tooltip": "Select the type of query that is how you want to perform  'fast' or 'full'. Only select test codes will run—i.e., 62 WHOIS Domain Status, 82 Malware Databases Check, 87 SSL certificate validity, and 93 WHOIS Domain Check—while other tests and data collectors will be disabled and in full mode all tests will be performed, similar to what the TIP GUI displays.",
+                    "options": [
+                        "fast",
+                        "full"
+                    ]
                 },
                 {
                     "title": "Query Type",
@@ -234,8 +236,8 @@
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "description": "Select the type of query that is how you want to perform get domain operation the v2 API version differs from the v1 only in the output format..",
-                    "tooltip": "Select the type of query that is how you want to perform get domain operation the v2 API version differs from the v1 only in the output format..",
+                    "description": "Select the type of query that is how you want to perform get domain operation the v2 API version differs from the v1 only in the output format.",
+                    "tooltip": "Select the type of query that is how you want to perform get domain operation the v2 API version differs from the v1 only in the output format.",
                     "options": [
                         "V1",
                         "V2"

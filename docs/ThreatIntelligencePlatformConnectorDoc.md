@@ -1,5 +1,5 @@
 ## About the connector
-Threat Intelligence Platform combines several threat intelligence sources to provide in-depth insights on threat hosts and attack infrastructure.This connector facilitates automated operations to pull off real-time host configuration analyses to come up with actionable threat intelligence that is vital in detection, mitigation, and remediation.
+Threat Intelligence Platform combines several threat intelligence sources to provide in-depth insights on threat hosts and attack infrastructure.This connector facilitates automated operations to pull off real-time host configuration analysis to come up with actionable threat intelligence that is vital in detection, mitigation, and remediation.
 <p>This document provides information about the Threat Intelligence Platform Connector, which facilitates automated interactions, with a Threat Intelligence Platform server using FortiSOAR&trade; playbooks. Add the Threat Intelligence Platform Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Threat Intelligence Platform.</p>
 
 ### Version information
@@ -117,8 +117,8 @@ The output contains the following populated JSON schema:
 ### operation: Get Domain Reputation  Details
 #### Input parameters
 <table border=1><thead><tr><th>Parameter<br></th><th>Description<br></th></tr></thead><tbody><tr><td>Domain Name<br></td><td>Required domain name whose geolocation data needs to be retrieved.<br>
-</td></tr><tr><td>Mode<br></td><td>Optional field, choose between two modes: 'fast' or 'full, fast (default)'. Only select test codes will run—i.e., 62 WHOIS Domain Status, 82 Malware Databases Check, 87 SSL certificate validity, and 93 WHOIS Domain Check—while other tests and data collectors will be disabled and in full mode all tests will be performed, similar to what the TIP GUI displays.<br>
-</td></tr><tr><td>Query Type<br></td><td>Select the type of query that is how you want to perform get domain operation the v2 API version differs from the v1 only in the output format..<br>
+</td></tr><tr><td>Mode<br></td><td>Select the type of query that is how you want to perform  'fast' or 'full'. Only select test codes will run—i.e., 62 WHOIS Domain Status, 82 Malware Databases Check, 87 SSL certificate validity, and 93 WHOIS Domain Check—while other tests and data collectors will be disabled and in full mode all tests will be performed, similar to what the TIP GUI displays.<br>
+</td></tr><tr><td>Query Type<br></td><td>Select the type of query that is how you want to perform get domain operation the v2 API version differs from the v1 only in the output format.<br>
 </td></tr></tbody></table>
 
 #### Output
