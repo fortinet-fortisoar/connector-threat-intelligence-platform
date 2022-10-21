@@ -1,0 +1,504 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "f3764f94-8c8f-4335-9645-cb4817f6c0ab",
+      "@type": "WorkflowCollection",
+      "name": "Sample - Threat Intelligence Platform - 1.0.0",
+      "description": "Threat Intelligence Platform combines several threat intelligence sources to provide in-depth insights on threat hosts and attack infrastructure.This connector facilitates automated operations to pull off real-time host configuration analysis to come up with actionable threat intelligence that is vital in detection, mitigation, and remediation.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "threat-intelligence-platform"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "b7131ca3-88a8-406b-a9b5-345913423e94",
+          "collection": "/api/3/workflow_collections/f3764f94-8c8f-4335-9645-cb4817f6c0ab",
+          "triggerLimit": null,
+          "description": "Retrieved information for a given domain name, get a collection of its web, mail, and name servers as well as its known subdomains. For each infrastructure entry, find out its IP address, geolocation, and subnetwork information.",
+          "name": "Get Domain Infrastructure Analysis Details",
+          "tag": "#Threat Intelligence Platform",
+          "recordTags": [
+            "threat-intelligence-platform"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/45b23f45-c21d-40ad-a628-03189aa1a2b0",
+          "steps": [
+            {
+              "uuid": "45b23f45-c21d-40ad-a628-03189aa1a2b0",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "7d9157f1-694f-4062-9c9e-3bc23b646311",
+                "title": "Threat Intelligence Platform: Get Domain Infrastructure Analysis Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "662a9560-074b-487c-8372-05c5e6d875fa",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Infrastructure Analysis Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Threat Intelligence Platform",
+                "config": "''",
+                "params": {
+                  "domain_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "threat-intelligence-platform",
+                "operation": "get_domain_infrastructure_analysis_details",
+                "operationTitle": "Get Domain Infrastructure Analysis Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "0e5e3dcd-3d23-4f25-a2c1-4e6ce6630492",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Infrastructure Analysis Details",
+              "sourceStep": "/api/3/workflow_steps/45b23f45-c21d-40ad-a628-03189aa1a2b0",
+              "targetStep": "/api/3/workflow_steps/662a9560-074b-487c-8372-05c5e6d875fa"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "fb40fa58-437a-44f5-8152-0c26ca077032",
+          "collection": "/api/3/workflow_collections/f3764f94-8c8f-4335-9645-cb4817f6c0ab",
+          "triggerLimit": null,
+          "description": "Retrieved information for a given domain name, get detailed information about its SSL Certificate and the complete SSL Certificate chain.",
+          "name": "Get SSL Certificate Chain Details",
+          "tag": "#Threat Intelligence Platform",
+          "recordTags": [
+            "threat-intelligence-platform"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/dc6ebf9d-1b6f-498b-bc4e-c0be728abc3d",
+          "steps": [
+            {
+              "uuid": "dc6ebf9d-1b6f-498b-bc4e-c0be728abc3d",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "6d0b78ae-b734-418b-9820-f412a4773881",
+                "title": "Threat Intelligence Platform: Get SSL Certificate Chain Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "3f83c4f5-e271-4a9b-adbf-c6bf2b31ff5d",
+              "@type": "WorkflowStep",
+              "name": "Get SSL Certificate Chain Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Threat Intelligence Platform",
+                "config": "''",
+                "params": {
+                  "domain_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "threat-intelligence-platform",
+                "operation": "get_ssl_certificate_chain_details",
+                "operationTitle": "Get SSL Certificate Chain Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "97e18a9a-909f-48e7-8dbf-ed2fde694ccc",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get SSL Certificate Chain Details",
+              "sourceStep": "/api/3/workflow_steps/dc6ebf9d-1b6f-498b-bc4e-c0be728abc3d",
+              "targetStep": "/api/3/workflow_steps/3f83c4f5-e271-4a9b-adbf-c6bf2b31ff5d"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "412b2fc2-ae28-42df-b557-a66c0a504d7f",
+          "collection": "/api/3/workflow_collections/f3764f94-8c8f-4335-9645-cb4817f6c0ab",
+          "triggerLimit": null,
+          "description": "Retrieved information for a given domain name, establish and test SSL connection to the host and analyze how it is configured - to detect common configuration issues potentially leading to vulnerabilities.",
+          "name": "Get SSL Configuration Analysis Details",
+          "tag": "#Threat Intelligence Platform",
+          "recordTags": [
+            "threat-intelligence-platform"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/45c2c147-b3f6-4605-bdb7-133e768eff36",
+          "steps": [
+            {
+              "uuid": "45c2c147-b3f6-4605-bdb7-133e768eff36",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "f1479540-16b4-46a0-b278-07f86de3aa41",
+                "title": "Threat Intelligence Platform: Get SSL Configuration Analysis Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "05e0833a-e708-4ad4-9ef0-56bb4a87494b",
+              "@type": "WorkflowStep",
+              "name": "Get SSL Configuration Analysis Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Threat Intelligence Platform",
+                "config": "''",
+                "params": {
+                  "domain_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "threat-intelligence-platform",
+                "operation": "get_ssl_configuration_analysis_details",
+                "operationTitle": "Get SSL Configuration Analysis Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "37353ca4-317d-4447-b369-32bb89f116b2",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get SSL Configuration Analysis Details",
+              "sourceStep": "/api/3/workflow_steps/45c2c147-b3f6-4605-bdb7-133e768eff36",
+              "targetStep": "/api/3/workflow_steps/05e0833a-e708-4ad4-9ef0-56bb4a87494b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "11a96655-64f0-4418-b314-5c5d68c095e5",
+          "collection": "/api/3/workflow_collections/f3764f94-8c8f-4335-9645-cb4817f6c0ab",
+          "triggerLimit": null,
+          "description": "Retrieved information for a given domain name,check if it is considered to be dangerous in different security data sources. Dangerous domains could be related to a malware distribution network or host a malicious code.",
+          "name": "Get Domain Malware Check Details",
+          "tag": "#Threat Intelligence Platform",
+          "recordTags": [
+            "threat-intelligence-platform"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/b16758c4-86d0-4db4-b313-8c3ef506a182",
+          "steps": [
+            {
+              "uuid": "b16758c4-86d0-4db4-b313-8c3ef506a182",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "e8fb69a1-593c-44bd-8302-778401df5a2d",
+                "title": "Threat Intelligence Platform: Get Domain Malware Check Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "53edd8d1-4765-4f9c-83d7-7f56d3f848df",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Malware Check Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Threat Intelligence Platform",
+                "config": "''",
+                "params": {
+                  "domain_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "threat-intelligence-platform",
+                "operation": "get_domain_malware_check_details",
+                "operationTitle": "Get Domain Malware Check Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ac099828-b3d6-4804-b96b-943bcedaf0bf",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Malware Check Details",
+              "sourceStep": "/api/3/workflow_steps/b16758c4-86d0-4db4-b313-8c3ef506a182",
+              "targetStep": "/api/3/workflow_steps/53edd8d1-4765-4f9c-83d7-7f56d3f848df"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f3276354-a5b2-4414-bc12-7e4faa08bb6b",
+          "collection": "/api/3/workflow_collections/f3764f94-8c8f-4335-9645-cb4817f6c0ab",
+          "triggerLimit": null,
+          "description": "Retrieve a list of domain names resolving to a given domain name, including subdomains. Make sure the website does not share the IP address with malicious domains, as that may result in over blocking \u00e2\u20ac\u201c a situation when a blocked malicious site also blocks other sites with the same IP. Research the infrastructure of connected domains.",
+          "name": "Get Connected Domains Details",
+          "tag": "#Threat Intelligence Platform",
+          "recordTags": [
+            "threat-intelligence-platform"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/cf85da53-a3e1-40a4-a0a3-0a00fa896e26",
+          "steps": [
+            {
+              "uuid": "cf85da53-a3e1-40a4-a0a3-0a00fa896e26",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "2db54750-d015-4c97-87bd-9ab37dc61eb6",
+                "title": "Threat Intelligence Platform: Get Connected Domains Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "a97c1fb0-e569-46be-8b4c-d58d98178eaf",
+              "@type": "WorkflowStep",
+              "name": "Get Connected Domains Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Threat Intelligence Platform",
+                "config": "''",
+                "params": {
+                  "domain_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "threat-intelligence-platform",
+                "operation": "get_connected_domains_details",
+                "operationTitle": "Get Connected Domains Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "97c01b8e-947d-48bd-a747-33e2d481887e",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Connected Domains Details",
+              "sourceStep": "/api/3/workflow_steps/cf85da53-a3e1-40a4-a0a3-0a00fa896e26",
+              "targetStep": "/api/3/workflow_steps/a97c1fb0-e569-46be-8b4c-d58d98178eaf"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "f2ac678f-96e6-4899-9745-53947b54bf72",
+          "collection": "/api/3/workflow_collections/f3764f94-8c8f-4335-9645-cb4817f6c0ab",
+          "triggerLimit": null,
+          "description": "Evaluate a domain's reputation based on numerous security data sources as well as on an instant host's audit procedure. For a given domain name or IPv4 address, collect and evaluate over 120 parameters and calculate the resulting reputation score.",
+          "name": "Get Domain Reputation  Details",
+          "tag": "#Threat Intelligence Platform",
+          "recordTags": [
+            "threat-intelligence-platform"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4a265b25-37be-465a-b16c-497bbaf17469",
+          "steps": [
+            {
+              "uuid": "4a265b25-37be-465a-b16c-497bbaf17469",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "54323ebd-9017-4069-9084-43c8339b4a01",
+                "title": "Threat Intelligence Platform: Get Domain Reputation  Details",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "633eed1d-5aa7-4328-b25c-969e2d13b021",
+              "@type": "WorkflowStep",
+              "name": "Get Domain Reputation  Details",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "Threat Intelligence Platform",
+                "config": "''",
+                "params": {
+                  "domain_name": ""
+                },
+                "version": "1.0.0",
+                "connector": "threat-intelligence-platform",
+                "operation": "get_domain_reputation_details",
+                "operationTitle": "Get Domain Reputation  Details",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "9a6a8790-2036-4dec-a9ab-57f0abd6b6a2",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get Domain Reputation  Details",
+              "sourceStep": "/api/3/workflow_steps/4a265b25-37be-465a-b16c-497bbaf17469",
+              "targetStep": "/api/3/workflow_steps/633eed1d-5aa7-4328-b25c-969e2d13b021"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

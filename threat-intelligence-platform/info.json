@@ -1,0 +1,249 @@
+{
+    "name": "threat-intelligence-platform",
+    "version": "1.0.0",
+    "label": "Threat Intelligence Platform",
+    "description": "Threat Intelligence Platform combines several threat intelligence sources to provide in-depth insights on threat hosts and attack infrastructure.This connector facilitates automated operations to pull off real-time host configuration analysis to come up with actionable threat intelligence that is vital in detection, mitigation, and remediation.",
+    "publisher": "spryIQ.co",
+    "icon_small_name": "threat-intelligence-platform_32x32.png",
+    "icon_large_name": "threat-intelligence-platform_80x80.png",
+    "cs_compatible": true,
+    "cs_approved": false,
+    "category": "Threat Intelligence",
+    "help_online": "https://github.com/jitesh-spryiq/connector-threat-intelligence-platform/blob/develop/docs/ThreatIntelligencePlatformConnectorDoc.md",
+    "configuration": {
+        "fields": [
+            {
+                "title": "Server URL",
+                "type": "text",
+                "description": "URL of the Threat Intelligence Platform connector to access the connector website.",
+                "tooltip": "URL of the Threat Intelligence Platform connector to access the connector website.",
+                "name": "server",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "",
+                "placeholder": "e.g: https://api.threatintelligenceplatform.com or api.threatintelligenceplatform.com"
+            },
+            {
+                "title": "API key",
+                "type": "password",
+                "description": "Provide API token, used for user authentication.",
+                "tooltip": "Provide API token, used for user authentication.",
+                "name": "api_key",
+                "required": true,
+                "visible": true,
+                "editable": true,
+                "value": "",
+                "placeholder": "e.g:at_CjnYgbaner3wqUxhZ6aej4hAxbMqEawABEA"
+            }
+        ]
+    },
+    "operations": [
+        {
+            "title": "Get Domain Infrastructure Analysis Details",
+            "operation": "get_domain_infrastructure_analysis_details",
+            "description": "Retrieved information for a given domain name, get a collection of its web, mail, and name servers as well as its known subdomains. For each infrastructure entry, find out its IP address, geolocation, and subnetwork information.",
+            "annotation": "domain_infrastructure_analysis_details",
+            "category": "investigation",
+            "output_schema": [
+                {
+                    "domainName": "",
+                    "resourceType": "",
+                    "ipv4": "",
+                    "geolocation": {},
+                    "subnetwork": {}
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Domain Name",
+                    "type": "text",
+                    "name": "domain_name",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g:threatintelligenceplatform.com",
+                    "description": "Required domain name whose geolocation data needs to be retrieved.",
+                    "tooltip": "Required domain name whose geolocation data needs to be retrieved."
+                }
+            ]
+        },
+        {
+            "title": "Get SSL Certificate Chain Details",
+            "operation": "get_ssl_certificate_chain_details",
+            "description": "Retrieved information for a given domain name, get detailed information about its SSL Certificate and the complete SSL Certificate chain.",
+            "annotation": "ssl_certificate_chain_details",
+            "category": "investigation",
+            "output_schema": [
+                {
+                    "chainHierarchy": "",
+                    "commonName": "",
+                    "type": "",
+                    "validFrom": "",
+                    "validTo": "",
+                    "serialNumber": "",
+                    "signatureAlgorithm": "",
+                    "subject": {},
+                    "issuer": {},
+                    "purposes": [],
+                    "purposesCA": [],
+                    "publicKey": {},
+                    "extensions": {},
+                    "certificatePEM": ""
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Domain Name",
+                    "type": "text",
+                    "name": "domain_name",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g:threatintelligenceplatform.com",
+                    "description": "Required domain name whose geolocation data needs to be retrieved.",
+                    "tooltip": "Required domain name whose geolocation data needs to be retrieved."
+                }
+            ]
+        },
+        {
+            "title": "Get SSL Configuration Analysis Details",
+            "operation": "get_ssl_configuration_analysis_details",
+            "description": "Retrieved information for a given domain name, establish and test SSL connection to the host and analyze how it is configured - to detect common configuration issues potentially leading to vulnerabilities.",
+            "annotation": "ssl_configuration_analysis_details",
+            "category": "investigation",
+            "output_schema": [
+                {
+                    "hasWarnings": "",
+                    "testResults": {}
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Domain Name",
+                    "type": "text",
+                    "name": "domain_name",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g:threatintelligenceplatform.com",
+                    "description": "Required domain name whose geolocation data needs to be retrieved.",
+                    "tooltip": "Required domain name whose geolocation data needs to be retrieved."
+                }
+            ]
+        },
+        {
+            "title": "Get Domain Malware Check Details",
+            "operation": "get_domain_malware_check_details",
+            "description": "Retrieved information for a given domain name,check if it is considered to be dangerous in different security data sources. Dangerous domains could be related to a malware distribution network or host a malicious code.",
+            "annotation": "domain_malware_check_details",
+            "category": "investigation",
+            "output_schema": [
+                {
+                    "safeScore": "",
+                    "warningDetails": []
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Domain Name",
+                    "type": "text",
+                    "name": "domain_name",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g:threatintelligenceplatform.com",
+                    "description": "Required domain name whose geolocation data needs to be retrieved.",
+                    "tooltip": "Required domain name whose geolocation data needs to be retrieved."
+                }
+            ]
+        },
+        {
+            "title": "Get Connected Domains Details",
+            "operation": "get_connected_domains_details",
+            "description": "Retrieve a list of domain names resolving to a given domain name, including subdomains. Make sure the website does not share the IP address with malicious domains, as that may result in over blocking – a situation when a blocked malicious site also blocks other sites with the same IP. Research the infrastructure of connected domains.",
+            "annotation": "connected_domains_details",
+            "category": "investigation",
+            "output_schema": [
+                {
+                    "numberOfDomains": "",
+                    "domains": []
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Domain Name",
+                    "type": "text",
+                    "name": "domain_name",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g:threatintelligenceplatform.com",
+                    "description": "Required domain name whose geolocation data needs to be retrieved.",
+                    "tooltip": "Required domain name whose geolocation data needs to be retrieved."
+                }
+            ]
+        },
+        {
+            "title": "Get Domain Reputation  Details",
+            "operation": "get_domain_reputation_details",
+            "description": "Evaluate a domain's reputation based on numerous security data sources as well as on an instant host's audit procedure. For a given domain name or IPv4 address, collect and evaluate over 120 parameters and calculate the resulting reputation score.",
+            "annotation": "domain_reputation_details",
+            "category": "investigation",
+            "output_schema": [
+                {
+                    "mode": "",
+                    "reputationScore": "",
+                    "testResults": []
+                }
+            ],
+            "parameters": [
+                {
+                    "title": "Domain Name",
+                    "type": "text",
+                    "name": "domain_name",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "value": "",
+                    "placeholder": "e.g:threatintelligenceplatform.com",
+                    "description": "Required domain name whose geolocation data needs to be retrieved.",
+                    "tooltip": "Required domain name whose geolocation data needs to be retrieved."
+                },
+                {
+                    "title": "Mode",
+                    "type": "select",
+                    "name": "mode",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "description": "Select the type of query that is how you want to perform  'fast' or 'full'. Only select test codes will run—i.e., 62 WHOIS Domain Status, 82 Malware Databases Check, 87 SSL certificate validity, and 93 WHOIS Domain Check—while other tests and data collectors will be disabled and in full mode all tests will be performed, similar to what the TIP GUI displays.",
+                    "tooltip": "Select the type of query that is how you want to perform  'fast' or 'full'. Only select test codes will run—i.e., 62 WHOIS Domain Status, 82 Malware Databases Check, 87 SSL certificate validity, and 93 WHOIS Domain Check—while other tests and data collectors will be disabled and in full mode all tests will be performed, similar to what the TIP GUI displays.",
+                    "options": [
+                        "fast",
+                        "full"
+                    ]
+                },
+                {
+                    "title": "Query Type",
+                    "type": "select",
+                    "name": "query_type",
+                    "required": true,
+                    "visible": true,
+                    "editable": true,
+                    "description": "Select the type of query that is how you want to perform get domain operation the v2 API version differs from the v1 only in the output format.",
+                    "tooltip": "Select the type of query that is how you want to perform get domain operation the v2 API version differs from the v1 only in the output format.",
+                    "options": [
+                        "V1",
+                        "V2"
+                    ]
+                }
+            ]
+        }
+    ]
+}
